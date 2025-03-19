@@ -1,15 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Allegro</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header>
-        <div>
-            
+        <div class="nav">
+            <div class="nav-top">
+                <div class="logo">
+                    <img src="img/logo.svg" alt="logo">
+                </div>
+                <div class="inputSearch">
+                    <input type="text" placeholder="czego szukasz?">
+                    <select name="catSearch" id="catSearch">
+                        <option value="wszedzie">Wszędzie</option>
+                        <option value="zabawki">Zabawki</option>
+                    </select>
+                    <button>SZUKAJ</button>
+                </div>
+                <div class="navIcons">
+                    <img src="img/dostawa.svg" alt="dostawa">
+                    <img src="img/ulubione.svg" alt="ulubione">
+                    <img src="img/czat.svg" alt="czat">
+                    <img src="img/powiadomienia.svg" alt="powiadomienia">
+                    <img src="img/koszyk.svg" alt="koszyk">
+                    <label>User ></label>
+                </div>
+                <div class="kontrast">
+                    <img src="img/a.jpg" alt="a">
+                    <img src="img/ap.jpg" alt="ap">
+                    <img src="img/app.jpg" alt="app">
+                    <img src="img/contrast.jpg" alt="contrast">
+                </div>
+            </div>
+            <div class="nav-low">
+                <div class="nav-low-1">
+                    <label for="">Kategorie \/</label>
+                    <img src="img/nav2img1.svg" alt="">
+                    <label for="">Allegro Days</label>
+                    <img src="img/nav2img2.svg" alt="">
+                    <label for="">Allegro Days</label>
+                    <img src="img/nav2img3.svg" alt="">
+                    <label for="">Allegro Days</label>
+                    <img src="img/nav2img4.svg" alt="">
+                    <label for="">Allegro Days</label>
+                </div>
+                <div class="nav-low-2">
+
+                </div>
+            </div>
         </div>
     </header>
+    <main>
+        <div class="baner">
+            <img src="Zdjęcia/baner1.png" alt="baner1">
+            <div class="circles">
+                &bull;&bull;&bull;&bull;
+            </div>
+        </div>
+        <div class="mainCat">
+            <div class="cat1">
+                <img src="Zdjęcia/allegro_days_photo.webp" alt="1">
+                <h4>Kupuj taniej</h4>
+            </div>
+            <div class="cat2">
+                <img src="Zdjęcia/allegro_days_photo.webp" alt="2">
+                <h4>Łap niskie ceny</h4>
+            </div>
+            <div class="cat3">
+                <img src="Zdjęcia/allegro_days_photo.webp" alt="3">
+                <h4>Zgarnij kupon 100 zł</h4>
+            </div>
+            <div class="cat4">
+                <img src="Zdjęcia/allegro_days_photo.webp" alt="4">
+                <h4>Smart! na rok 20 zł taniej</h4>
+            </div>
+            <div class="cat5">
+                <img src="Zdjęcia/allegro_days_photo.webp" alt="5">
+                <h4>Motoryzacja</h4>
+            </div>
+            <div class="cat6">
+                <img src="Zdjęcia/allegro_days_photo.webp" alt="6">
+                <h4>Elektronika</h4>
+            </div>
+            <div class="cat7">
+                <img src="Zdjęcia/allegro_days_photo.webp" alt="7">
+                <h4>Supermarket</h4>
+            </div>
+            <div class="cat8">
+                <img src="Zdjęcia/allegro_days_photo.webp" alt="8">
+                <h4>Dom i ogród</h4>
+            </div>
+            <div class="cat9">
+                <img src="Zdjęcia/allegro_days_photo.webp" alt="9">
+                <h4>Moda</h4>
+            </div>
+        </div>
+        <div class="itemOffers">
+            <div class="lowerBaner">
+                <img src="Zdjęcia/lower_baner_photo.webp" alt="lower-baner">
+            </div>
+            <div class="offersBG">
+                <div class="offers">
+                    <div class="product1">
+                        <img src="Zdjęcia/allegro_offer_image.png" alt="allegro_offer_image">
+                        <div style="background-color: purple; width: auto; font-size: 90%;">Smart! okazja</div>
+                        <div style="font-size: 90%; text-align: right; margin-left: auto; margin-right: auto;"><s>185,99</s> zł</div>
+                        <div style="width: 100%; margin-top: 5%; margin-bottom: 10%;">cena z 30 dni</div>
+                        <div style="width: 100%; margin-bottom: 8%;">176,69 zł</div>
+                        <img src="Ikony/allegro_smart_icon.png" alt="allegro_smart_icon" style="margin-bottom: 4%;">
+                        <div>NITOWNICA DO NITONAKRĘTEK I NITÓW ADAPTER 3W1</div>
+                        <div>zapłać później z <img src="Ikony/allegro_pay_icon.png" alt="allegro_pay_icon" style="background-color: blue;"></div>
+                        <div>dostawa we wtorek</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="inspBaner">
+            <div class="findInsp">
+                <h4>Znajdź inspiracje</h4>
+                <p>w kategorii Mechanika</p>
+            </div>
+            <div class="inspCat1">
+                <img src="Zdjęcia/cat_moto_1.webp" alt="">
+            </div>
+            <div class="inspCat2">
+                <img src="Zdjęcia/cat_moto_2.webp" alt="">
+            </div>
+            <div class="inspCat3">
+                <img src="Zdjęcia/cat_moto_3.webp" alt="">
+            </div>
+            <div class="inspCat4">
+                <img src="Zdjęcia/cat_moto_4.webp" alt="">
+            </div>
+        </div> -->
+    </main>
+    <footer>
+        <div class="frAllegro">
+            <h3>Allegro</h3>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>Informacja o realizacj strategii podatkowej</p>
+
+        </div>
+        <div class="frCP">
+            <h3>Centrum pomocy</h3>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>Polityka prywatności mediów społecznościowych</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+        </div>
+        <div class="frSerwisy">
+            <h3>Serwisy</h3>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>Karty podarunkowe </p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+        </div>
+        <div class="frUstLok">
+            <h3>Centrum pomocy</h3>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>Polityka prywatności mediów społecznościowych</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+            <p>O nas</p>
+        </div>
+    </footer>
 </body>
+
 </html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Category Menu</title>
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .category-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px;
+            white-space: nowrap;
+            scrollbar-width: none;
+        }
+        .category-container::-webkit-scrollbar {
+            display: none;
+        }
+        .category {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 120px;
+        }
+        .category img {
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+        .category p {
+            margin-top: 5px;
+            font-size: 14px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="category-container">
+        <div class="category">
+            <img src="Zdjęcia/allegro_days_photo.webp" alt="Spring Shopping">
+            <p>Czas na wiosenne zakupy</p>
+        </div>
+        <div class="category">
+            <img src="Zdjęcia/allegro_days_photo.webp" alt="Business Shopping">
+            <p>Zakupy dla firm</p>
+        </div>
+        <div class="category">
+            <img src="Zdjęcia/allegro_days_photo.webp" alt="Win 1000 zl">
+            <p>Wygraj 1000 zł z One Box</p>
+        </div>
+        <div class="category">
+            <img src="Zdjęcia/allegro_days_photo.webp" alt="100 zl Coupon">
+            <p>Zgarnij kupon 100 zł</p>
+        </div>
+        <div class="category">
+            <img src="Zdjęcia/allegro_days_photo.webp" alt="Smart Savings">
+            <p>Oszczędzasz ze Smart!</p>
+        </div>
+        <div class="category">
+            <img src="Zdjęcia/allegro_days_photo.webp" alt="Summer Tires">
+            <p>Znajdź letnie opony</p>
+        </div>
+        <div class="category">
+            <img src="Zdjęcia/allegro_days_photo.webp" alt="Roller Skates">
+            <p>Rolki</p>
+        </div>
+        <div class="category">
+            <img src="Zdjęcia/allegro_days_photo.webp" alt="Smartwatches">
+            <p>Smartwatche</p>
+        </div>
+    </div>
+</body>
+</html>
