@@ -1,81 +1,212 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horizontal Category Menu</title>
-    <style>
-        body {
-            background-color: #111;
-            color: white;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-        .category-container {
-            display: flex;
-            overflow-x: auto;
-            gap: 20px;
-            padding: 10px;
-            white-space: nowrap;
-            scrollbar-width: none;
-        }
-        .category-container::-webkit-scrollbar {
-            display: none;
-        }
-        .category {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            width: 120px;
-        }
-        .category img {
-            width: 80px;
-            height: 80px;
-            border-radius: 15px;
-            object-fit: cover;
-        }
-        .category p {
-            margin-top: 5px;
-            font-size: 14px;
-            width: 100px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista produktów – Allegro‑style</title>
+  <style>
+    :root {
+      --orange: #ff7c1a;  /* tło obramowania */
+      --violet: #5c2d91;  /* "Smart! okazja" */
+      --pay-blue: #3a5afe; /* przycisk PAY */
+      --card-bg: #1e1e1e;
+    }
+
+    /* Podstawowe resety */
+    * {box-sizing:border-box; margin:0; padding:0;}
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--orange);
+      line-height: 1.4;
+      color:#fff;
+    }
+
+    /* Wrapper: maks. szerokość 767 px, wyśrodkowany */
+    .wrapper {
+      max-width: 767px;
+      margin: 0 auto;
+      padding: 8px;
+    }
+
+    /* Pasek informacyjny u góry */
+    .banner {
+      background:#000;
+      font-size:.9rem;
+      padding:4px 8px;
+      text-align:center;
+      margin-bottom:12px;
+    }
+
+    /* Lista kart produktów */
+    .product-list {
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    /* Pojedyncza karta produktu */
+    .product-card {
+      background: var(--card-bg);
+      border-radius:4px;
+      overflow:hidden;
+      color:#fff;
+      display:flex;
+      flex-direction:column;
+      /* Na bardzo wąskich ekranach (<=479 px) karta ma pełną szerokość,
+         a powyżej spróbuje zmieścić się 2 × obok siebie */
+      flex: 1 1 100%;
+      max-width:100%;
+    }
+    @media (min-width:480px) {
+      .product-card {
+        /* 2 kolumny – odejmujemy przerwę (gap) aby równo weszło */
+        flex: 1 1 calc(50% - 6px);
+        max-width: calc(50% - 6px);
+      }
+    }
+
+    /* Sekcja zdjęcia – tzw. ratio box 1:1 */
+    .product-image {
+      position:relative;
+      width:100%;
+      padding-top:100%; /* 1:1 */
+    }
+    .product-image img {
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .badge {
+      position:absolute;
+      bottom:4px;
+      left:4px;
+      background:var(--violet);
+      font-size:.75rem;
+      padding:2px 6px;
+      border-radius:3px;
+      white-space:nowrap;
+    }
+
+    /* Cena */
+    .price-row {
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:8px;
+      font-size:1.1rem;
+    }
+    .old-price {
+      text-decoration:line-through;
+      color:#999;
+      font-size:.9rem;
+    }
+    .price {
+      font-weight:bold;
+    }
+
+    /* Informacje: SMART, tytuł */
+    .info {
+      padding:0 8px 8px;
+      flex-grow:1; /* wypycha dół aby stopki zrównały się wysokością */
+    }
+    .smart {
+      font-size:.75rem;
+      display:inline-block;
+      background:var(--orange);
+      padding:2px 4px;
+      border-radius:2px;
+      margin-bottom:4px;
+    }
+    .title {
+      font-size:.9rem;
+      text-transform:uppercase;
+      line-height:1.3;
+    }
+
+    /* Sekcja "zapłać" i "dostawa" */
+    .pay-row,
+    .delivery-row {
+      padding:4px 8px;
+      font-size:.8rem;
+      border-top:1px solid #333;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .button-pay {
+      background:var(--pay-blue);
+      color:#fff;
+      border:none;
+      border-radius:2px;
+      padding:2px 6px;
+      font-size:.75rem;
+      cursor:pointer;
+    }
+  </style>
 </head>
 <body>
-    <div class="category-container">
-        <div class="category">
-            <img src="Zdjęcia/allegro_days_photo.webp" alt="Spring Shopping">
-            <p>Czas na wiosenne zakupy</p>
-        </div>
-        <div class="category">
-            <img src="Zdjęcia/allegro_days_photo.webp" alt="Business Shopping">
-            <p>Zakupy dla firm</p>
-        </div>
-        <div class="category">
-            <img src="Zdjęcia/allegro_days_photo.webp" alt="Win 1000 zl">
-            <p>Wygraj 1000 zł z One Box</p>
-        </div>
-        <div class="category">
-            <img src="Zdjęcia/allegro_days_photo.webp" alt="100 zl Coupon">
-            <p>Zgarnij kupon 100 zł</p>
-        </div>
-        <div class="category">
-            <img src="Zdjęcia/allegro_days_photo.webp" alt="Smart Savings">
-            <p>Oszczędzasz ze Smart!</p>
-        </div>
-        <div class="category">
-            <img src="Zdjęcia/allegro_days_photo.webp" alt="Summer Tires">
-            <p>Znajdź letnie opony</p>
-        </div>
-        <div class="category">
-            <img src="Zdjęcia/allegro_days_photo.webp" alt="Roller Skates">
-            <p>Rolki</p>
-        </div>
-        <div class="category">
-            <img src="Zdjęcia/allegro_days_photo.webp" alt="Smartwatches">
-            <p>Smartwatche</p>
-        </div>
+  <div class="wrapper">
+    <!-- Pasek banerowy -->
+    <div class="banner">
+      Jak okazje dla Smartowiczów, to rozgrzewka przed Allegro Days &nbsp;|&nbsp; do niedzieli&nbsp;2.03
     </div>
+
+    <!-- Lista produktów -->
+    <div class="product-list">
+
+      <!-- Karta produktu 1 -->
+      <article class="product-card">
+        <div class="product-image">
+          <img src="https://picsum.photos/400?random=1" alt="Nitownica 3w1" />
+          <span class="badge">Smart! okazja</span>
+        </div>
+        <div class="price-row">
+          <span class="old-price">185,99&nbsp;zł</span>
+          <span class="price">176,69&nbsp;zł</span>
+        </div>
+        <div class="info">
+          <span class="smart">SMART</span>
+          <h3 class="title">Nitownica do nitonakrętek i nitów adapter&nbsp;3w1</h3>
+        </div>
+        <div class="pay-row">
+          <span>zapłać później</span>
+          <button class="button-pay">PAY</button>
+        </div>
+        <div class="delivery-row">
+          <span>dostawa we wtorek</span>
+          <span>ℹ️</span>
+        </div>
+      </article>
+
+      <!-- Karta produktu 2 (przykładowo ta sama) -->
+      <article class="product-card">
+        <div class="product-image">
+          <img src="https://picsum.photos/400?random=2" alt="Nitownica 3w1" />
+          <span class="badge">Smart! okazja</span>
+        </div>
+        <div class="price-row">
+          <span class="old-price">185,99&nbsp;zł</span>
+          <span class="price">176,69&nbsp;zł</span>
+        </div>
+        <div class="info">
+          <span class="smart">SMART</span>
+          <h3 class="title">Nitownica do nitonakrętek i nitów adapter&nbsp;3w1</h3>
+        </div>
+        <div class="pay-row">
+          <span>zapłać później</span>
+          <button class="button-pay">PAY</button>
+        </div>
+        <div class="delivery-row">
+          <span>dostawa we wtorek</span>
+          <span>ℹ️</span>
+        </div>
+      </article>
+
+    </div> <!-- /.product-list -->
+  </div> <!-- /.wrapper -->
 </body>
 </html>
