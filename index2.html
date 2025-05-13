@@ -1,212 +1,224 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lista produktów – Allegro‑style</title>
+  <meta charset="UTF-8">
+  <title>Pasek górny – Allegro‑style</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-VuwhNgQp+YpN4KZQ1bY4+v7JFV7pi0Qz4g/2M9UxTAZDXZQFbl+oUcv6XxBxTVLm2IwIPcx49gNBiHw1s+ED9g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     :root {
-      --orange: #ff7c1a;  /* tło obramowania */
-      --violet: #5c2d91;  /* "Smart! okazja" */
-      --pay-blue: #3a5afe; /* przycisk PAY */
-      --card-bg: #1e1e1e;
+      --orange: #ff6f00;
+      --bg-dark: #1c1c1c;
+      --grey: #555;
+      --input-bg: #262626;
     }
 
-    /* Podstawowe resety */
-    * {box-sizing:border-box; margin:0; padding:0;}
+    * { box-sizing: border-box; }
     body {
-      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #121212;
+      color: #eee;
+    }
+
+    /* =========  TOPBAR  ========= */
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 8px 16px;
+      background: var(--bg-dark);
+    }
+
+    /* ----------  LOGO  ---------- */
+    .logo {
+      display: flex;
+      align-items: center;
+      color: var(--orange);
+      font-weight: 700;
+      font-size: 24px;
+      user-select: none;
+    }
+    .logo-anniv {
+      display: inline-block;
+      margin-left: 6px;
+      line-height: 12px;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    /* --------  SEARCH  --------- */
+    .search-wrapper { flex: 1; }
+
+    .search-box {
+      display: flex;
+      width: 100%;
+      border: 1px solid var(--grey);
+      border-radius: 2px;
+      overflow: hidden;
+      background: var(--input-bg);
+    }
+
+    .search-box input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #fff;
+      padding: 10px 12px;
+      font-size: 14px;
+    }
+    .search-box input::placeholder { color: #bbb; }
+
+    .search-multi {
+      align-self: center;
+      color: #00b388;
+      font-size: 11px;
+      padding: 0 6px;
+      white-space: nowrap;
+    }
+
+    .search-select {
+      background: var(--input-bg);
+      color: #fff;
+      border: none;
+      padding: 0 30px 0 10px;
+      position: relative;
+      appearance: none;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .search-select-wrapper {
+      position: relative;
+    }
+    .search-select-wrapper::after {
+      content: "\f078"; /* FontAwesome caret */
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      pointer-events: none;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #aaa;
+      font-size: 10px;
+    }
+
+    .search-btn {
       background: var(--orange);
-      line-height: 1.4;
-      color:#fff;
+      border: none;
+      color: #fff;
+      font-weight: 700;
+      padding: 0 22px;
+      cursor: pointer;
+      transition: background .2s;
     }
+    .search-btn:hover { background: #e25f00; }
 
-    /* Wrapper: maks. szerokość 767 px, wyśrodkowany */
-    .wrapper {
-      max-width: 767px;
-      margin: 0 auto;
-      padding: 8px;
+    /* ---------  ICONS  --------- */
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: #777;
     }
+    .icons i {
+      font-size: 18px;
+      cursor: pointer;
+      transition: color .2s;
+    }
+    .icons i:hover { color: #ccc; }
 
-    /* Pasek informacyjny u góry */
-    .banner {
-      background:#000;
-      font-size:.9rem;
-      padding:4px 8px;
-      text-align:center;
-      margin-bottom:12px;
+    /* --------  USER  --------- */
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-left: 16px;
+      cursor: pointer;
     }
+    .user-name { font-size: 14px; color: #fff; }
 
-    /* Lista kart produktów */
-    .product-list {
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
+    /* ---  ACCESSIBILITY TOOLS  --- */
+    .text-size-toggle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 16px;
     }
+    .text-size-toggle span { cursor: pointer; }
 
-    /* Pojedyncza karta produktu */
-    .product-card {
-      background: var(--card-bg);
-      border-radius:4px;
-      overflow:hidden;
-      color:#fff;
-      display:flex;
-      flex-direction:column;
-      /* Na bardzo wąskich ekranach (<=479 px) karta ma pełną szerokość,
-         a powyżej spróbuje zmieścić się 2 × obok siebie */
-      flex: 1 1 100%;
-      max-width:100%;
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-left: 16px;
+      cursor: pointer;
+      user-select: none;
     }
-    @media (min-width:480px) {
-      .product-card {
-        /* 2 kolumny – odejmujemy przerwę (gap) aby równo weszło */
-        flex: 1 1 calc(50% - 6px);
-        max-width: calc(50% - 6px);
-      }
-    }
-
-    /* Sekcja zdjęcia – tzw. ratio box 1:1 */
-    .product-image {
-      position:relative;
-      width:100%;
-      padding-top:100%; /* 1:1 */
-    }
-    .product-image img {
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-    .badge {
-      position:absolute;
-      bottom:4px;
-      left:4px;
-      background:var(--violet);
-      font-size:.75rem;
-      padding:2px 6px;
-      border-radius:3px;
-      white-space:nowrap;
-    }
-
-    /* Cena */
-    .price-row {
-      display:flex;
-      align-items:center;
-      gap:8px;
-      padding:8px;
-      font-size:1.1rem;
-    }
-    .old-price {
-      text-decoration:line-through;
-      color:#999;
-      font-size:.9rem;
-    }
-    .price {
-      font-weight:bold;
-    }
-
-    /* Informacje: SMART, tytuł */
-    .info {
-      padding:0 8px 8px;
-      flex-grow:1; /* wypycha dół aby stopki zrównały się wysokością */
-    }
-    .smart {
-      font-size:.75rem;
-      display:inline-block;
-      background:var(--orange);
-      padding:2px 4px;
-      border-radius:2px;
-      margin-bottom:4px;
-    }
-    .title {
-      font-size:.9rem;
-      text-transform:uppercase;
-      line-height:1.3;
-    }
-
-    /* Sekcja "zapłać" i "dostawa" */
-    .pay-row,
-    .delivery-row {
-      padding:4px 8px;
-      font-size:.8rem;
-      border-top:1px solid #333;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-
-    .button-pay {
-      background:var(--pay-blue);
-      color:#fff;
-      border:none;
-      border-radius:2px;
-      padding:2px 6px;
-      font-size:.75rem;
-      cursor:pointer;
+    .theme-toggle .circle {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      display: inline-block;
     }
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <!-- Pasek banerowy -->
-    <div class="banner">
-      Jak okazje dla Smartowiczów, to rozgrzewka przed Allegro Days &nbsp;|&nbsp; do niedzieli&nbsp;2.03
+
+  <header class="topbar">
+
+    <!-- LOGO -->
+    <div class="logo">
+      allegro
+      <span class="logo-anniv">
+        25<br>LAT
+      </span>
     </div>
 
-    <!-- Lista produktów -->
-    <div class="product-list">
+    <!-- SEARCH -->
+    <div class="search-wrapper">
+      <form class="search-box" role="search">
+        <input type="text" placeholder="czego szukasz?"/>
+        <span class="search-multi">szukaj wielu</span>
+        <div class="search-select-wrapper">
+          <select class="search-select" aria-label="Kategoria">
+            <option selected>Wszędzie</option>
+            <option>Elektronika</option>
+            <option>Dom i Ogród</option>
+            <option>Moda</option>
+          </select>
+        </div>
+        <button class="search-btn">SZUKAJ</button>
+      </form>
+    </div>
 
-      <!-- Karta produktu 1 -->
-      <article class="product-card">
-        <div class="product-image">
-          <img src="https://picsum.photos/400?random=1" alt="Nitownica 3w1" />
-          <span class="badge">Smart! okazja</span>
-        </div>
-        <div class="price-row">
-          <span class="old-price">185,99&nbsp;zł</span>
-          <span class="price">176,69&nbsp;zł</span>
-        </div>
-        <div class="info">
-          <span class="smart">SMART</span>
-          <h3 class="title">Nitownica do nitonakrętek i nitów adapter&nbsp;3w1</h3>
-        </div>
-        <div class="pay-row">
-          <span>zapłać później</span>
-          <button class="button-pay">PAY</button>
-        </div>
-        <div class="delivery-row">
-          <span>dostawa we wtorek</span>
-          <span>ℹ️</span>
-        </div>
-      </article>
+    <!-- ICONS & USER -->
+    <nav class="icons">
+      <i class="fa-solid fa-truck-fast" title="Dostawa"></i>
+      <i class="fa-regular fa-heart" title="Ulubione"></i>
+      <i class="fa-regular fa-message" title="Wiadomości"></i>
+      <i class="fa-regular fa-bell" title="Powiadomienia"></i>
+      <i class="fa-solid fa-trash-can" title="Kosz"></i>
+      <div class="user" title="Konto użytkownika">
+        <span class="user-name">UserXYZ</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
 
-      <!-- Karta produktu 2 (przykładowo ta sama) -->
-      <article class="product-card">
-        <div class="product-image">
-          <img src="https://picsum.photos/400?random=2" alt="Nitownica 3w1" />
-          <span class="badge">Smart! okazja</span>
-        </div>
-        <div class="price-row">
-          <span class="old-price">185,99&nbsp;zł</span>
-          <span class="price">176,69&nbsp;zł</span>
-        </div>
-        <div class="info">
-          <span class="smart">SMART</span>
-          <h3 class="title">Nitownica do nitonakrętek i nitów adapter&nbsp;3w1</h3>
-        </div>
-        <div class="pay-row">
-          <span>zapłać później</span>
-          <button class="button-pay">PAY</button>
-        </div>
-        <div class="delivery-row">
-          <span>dostawa we wtorek</span>
-          <span>ℹ️</span>
-        </div>
-      </article>
+      <!-- THEME / TEXT SIZE TOGGLES  -->
+      <div class="theme-toggle" title="Widok nocny">
+        <span class="circle"></span> Widok nocny
+      </div>
+      <div class="text-size-toggle" title="Rozmiar tekstu">
+        <span style="font-size: 12px;">A</span>
+        <span style="font-size: 16px;">A</span>
+        <span style="font-size: 20px;">A</span>
+        <span style="font-size: 24px; color: var(--orange); font-weight: 700;">A</span>
+      </div>
+    </nav>
 
-    </div> <!-- /.product-list -->
-  </div> <!-- /.wrapper -->
+  </header>
+
 </body>
 </html>
