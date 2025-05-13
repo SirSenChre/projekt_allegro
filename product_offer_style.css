@@ -924,6 +924,7 @@ h3 {
 
     .app {
         display: flex;
+        gap: 8%;
     }
 
     .navIcons {
@@ -1378,6 +1379,10 @@ h3 {
     }
 
 
+    .app {
+        display: flex;
+        gap: 4%;
+    }
 
 
 
@@ -1685,3 +1690,4 @@ h3 {
     }
 
 }
+
