@@ -1,4 +1,3 @@
-
 body {
     background-color: #000000;
     margin: 0;
@@ -45,6 +44,10 @@ body {
 .inputSearch {
     display: flex;
     height: auto;
+}
+
+hr {
+    border-color: #534D4D;
 }
 
 .inputSearch>input[type="text"] {
@@ -206,7 +209,7 @@ main {
 .smart_okazja {
     background-color: purple;
     width: auto;
-    font-size: 3vw;
+    font-size: 100%;
 }
 
 .offer_price_old {
@@ -214,7 +217,7 @@ main {
     text-align: right;
     margin-left: auto;
     margin-right: auto;
-    font-size: 4vw;
+    font-size: 100%;
 }
 
 .cena_z_30dni {
@@ -298,7 +301,15 @@ h3 {
     margin-top: 0;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 992px) and (max-width: 1920px) {
+    .h1-res {
+        display: none;
+    }
+
+    .offer-mobile {
+        display: none;
+    }
+
     .nav-mobile {
         display: none;
     }
@@ -327,6 +338,9 @@ h3 {
         justify-content: flex-start;
         gap: 2%;
     }
+.navIcons, .user, .app {
+        margin-bottom: 1.2%;
+    }
 
     .search-bar {
         display: flex;
@@ -336,6 +350,7 @@ h3 {
         /* margin-top: auto;
         margin-bottom: auto; */
         height: 30px;
+        margin-bottom: 1.2%;
     }
 
     .search-input {
@@ -369,9 +384,10 @@ h3 {
 
     .search-button {
         background-color: #ff6f00;
-        color: white;
+        color: black;
         border: 1px solid #ff6f00;
-        padding: 10px 20px;
+        text-align: center;
+        padding: 0px 20px;
         font-weight: bold;
         cursor: pointer;
     }
@@ -487,10 +503,11 @@ h3 {
         background-color: purple;
         width: auto;
         font-size: 80%;
+        padding: 1%;
     }
 
     .offer_price_old {
-        font-size: 110%;
+        font-size: 120%;
         text-align: right;
         margin-left: auto;
         margin-right: auto;
@@ -535,9 +552,10 @@ h3 {
     }
 
     .navIcons {
+        width: 240px;
         display: flex;
         justify-content: space-around;
-        gap: 5%;
+        /* gap: 5%; */
         
     }
 
@@ -590,11 +608,269 @@ h3 {
         flex-wrap: wrap;
     }
 
+    .offer-desktop {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .offer-main {
+        width: 55%;
+        height: auto;
+        background-color: #222222;
+        padding: 2%;
+    }
+
+    .offer-buy {
+        width: 35%;
+        height: auto;
+        background-color: #222222;
+        padding: 2%;
+    }
+
+    .offer-param {
+        width: 55%;
+        height: auto;
+        background-color: #222222;
+                padding: 2%;
+                margin-top: 2%;
+
+    }
+
+    .other_offers {
+        width: 35%;
+        height: auto;
+        background-color: #222222;
+                padding: 2%;
+                margin-top: 2%;
+
+    }
+
+    .offer-desc {
+        width: 55%;
+        height: auto;
+        background-color: #222222;
+                padding: 2%;
+                margin-top: 2%;
+    }
+
+    .rating {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2%;
+        width: 100%;
+    }
+    
+    .rating img {
+        width: 30px;
+        height: 28px;
+    }
+
+    .ratingS {
+        width: 70%;
+        display: flex;
+         flex-wrap: wrap;
+         justify-content: flex-start;
+         gap: 2%;
+    }
+
+    .ratingsQ {
+        color: #00b388;
+    }
+
+    .offer-title {
+        display: flex;
+        /* align-items: flex-start; */
+        justify-content: space-between;
+    }
+
+    .offer-title img{
+        margin-top: 0;
+    }
+
+    .offer-img {
+        width: 80%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3%;
+    }
+    .firma {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        gap: 6%;
+        font-size: 80%; 
+        padding-top: 3%;
+        padding-bottom: 3%;
+    }
+
+    .firma img {
+        width: 32px;
+        height: 32px;
+        display: block;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .offer_price_old {
+        margin-left: 5%;
+    }
+
+    .smart_price {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .offer_price {
+        font-size: 200%;
+        color: #12c824;
+        width: auto;
+    }
+
+    .offer_price_s {
+        font-size: 180%;
+        width: auto;
+    }
+
+    .najtansze {
+        padding: 3%;
+    }
+
+    .najtansze img {
+        
+        width: 110px;
+        height: 30px;
+        margin-left: 5%;
+    }
+
+    .smart_price > img{
+        width: 110px;
+        height: 30px;
+        margin-left: 5%;
+        margin-bottom: 1%;
+    }
+
+    .pay_later {
+        font-size: 90%;
+        display: flex;
+        align-items: center;
+        gap: 1%;
+    }
+
+    .dodaj {
+        width: 70%;
+        /* border: 1px solid white; */
+        height: auto;
+        display: flex;
+        text-align: center;
+    }
+
+    .dodaj div {
+        padding: 5%;
+        font-size: 140%;
+
+    }
+
+    .dodaj p {
+        width: 20%;
+        height: auto;
+        font-size: 100%;
+        margin-left: 6%;
+    }
+
+    .minus, .plus {
+        width: 25%;
+        border: 1px solid white;
+    }
+
+    .l_sztuk {
+        width: 50%;
+        border: 1px solid white;
+    }
+
+    .n_f {
+        margin-bottom: 0px;
+    }
+
+    .kup_smart {
+                margin-top: 6%;
+
+        background-color: #ff681d;
+        width: 90%;
+        min-width: 150px;
+        padding: 2%;
+        text-align: center;
+        border: 1px solid #ff681d;
+        border-radius: 6px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .kup_i_zaplac {
+        margin-top: 6%;
+        background-color: #464444;
+        width: 90%;
+        min-width: 150px;
+        padding: 2%;
+        text-align: center;
+        border: 1px solid #464444;
+        border-radius: 6px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    
+
+    .param-odd {
+        width: 100%;
+        background-color: #121111;
+        display: flex;
+        justify-content: flex-start;
+        padding: 1.5%;
+        font-size: 80%;
+    }
+
+    .p-one {
+        width: 50%;
+    }
+
+    .p-two {
+        width: 50%;
+    }
+
+    .param-even {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        padding: 1.5%;
+        font-size: 80%;
+    }
+
+    .offer-desc img {
+        display: block;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
 
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
+    .h1-res {
+        display: none;
+    }
+    .offer-desktop {
+        display: none;
+    }
 
+    .h4-desktop {
+        display: none;
+    }
     .nav-desktop {
         display: none;
     }
@@ -660,6 +936,7 @@ h3 {
 
     .app {
         display: flex;
+        gap: 8%;
     }
 
     .navIcons {
@@ -865,9 +1142,169 @@ h3 {
         width: 100%;
     }
 
+    main {
+        background-color: #211f1f;
+        /* padding: 2%; */
+    }
+
+    .offer-mobile {
+        padding: 2%;
+    }
+
+    .offer-head {
+        width: 100%;
+        height: auto;
+        padding-bottom: 5%;
+    }
+
+    .offer-img {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .rating img {
+        width: 30px;
+        height: 28px;
+    }
+
+    .rating {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2%;
+    }
+
+    .offer_price_old {
+        margin-left: 5%;
+    }
+
+    .offer_price {
+        font-size: 200%;
+        color: #12c824;
+    }
+
+    .smart_price > img, .najtansze > img{
+        width: 110px;
+        height: 30px;
+        margin-left: 5%;
+    }
+
+    .pay_later {
+        font-size: 90%;
+    }
+
+    .dodaj {
+        width: 50%;
+        /* border: 1px solid white; */
+        height: auto;
+        display: flex;
+        text-align: center;
+    }
+
+    .dodaj div {
+        padding: 5%;
+        font-size: 150%;
+
+    }
+
+    .dodaj p {
+        width: 20%;
+        font-size: 110%;
+        margin-left: 4%;
+    }
+
+    .minus, .plus {
+        width: 25%;
+        border: 1px solid white;
+    }
+
+    .l_sztuk {
+        width: 50%;
+        border: 1px solid white;
+    }
+
+    .other_offers {
+        width: 100%;
+        /* padding: 2%; */
+        padding-top: 5%;
+        background-color: #222222;
+    }
+
+    .other_offers h4 {
+        text-decoration: none;
+    }
+
+    .other_offers {
+        
+    }
+
+    .najtansze > .offer_price{
+        /* padding: 2%; */
+        color: white;
+    }
+
+    .najtansze {
+        /* padding: 2%; */
+    }
+
+    .najtansze h3 {
+        color: #a39a9a;
+    }
+
+    .stan {
+        color: #a39a9a;
+    }
+
+    .offer_desc > img {
+        width: 100%;
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    
+    .kup_smart {
+        background-color: #ff681d;
+        width: 60%;
+        min-width: 150px;
+        padding: 2%;
+        text-align: center;
+        border: 1px solid #ff681d;
+        border-radius: 6px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .kup_i_zaplac {
+        margin-top: 3%;
+        background-color: #464444;
+        width: 60%;
+        min-width: 150px;
+        padding: 2%;
+        text-align: center;
+        border: 1px solid #464444;
+        border-radius: 6px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    
+
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .h1-res {
+        display: none;
+    }
+    .h4-desktop {
+        display: none;
+    }
+    .offer-desktop {
+        display: none;
+    }
     .baner {
         display: none;
     }
@@ -957,6 +1394,10 @@ h3 {
     }
 
 
+    .app {
+        display: flex;
+        gap: 4%;
+    }
 
 
 
@@ -1001,7 +1442,7 @@ h3 {
     .nav-low-low {
         width: 100%;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         flex-wrap: wrap;
         align-items: center;
     }
@@ -1028,6 +1469,11 @@ h3 {
         display: flex;
         justify-content: space-between;
         gap: 2.5vw;
+    }
+
+    main {
+        padding-left: 2%;
+        padding-bottom: 2%;
     }
 
     .mainCat-mobile {
@@ -1111,6 +1557,194 @@ h3 {
 
     footer p {
         font-size: 80%;
+    }
+
+    main {
+        /* padding: 2%; */
+        background-color: #211f1f;
+    }
+
+    .offer-head {
+        width: 100%;
+        height: auto;
+        padding-bottom: 5%;
+    }
+
+    .offer-img {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .rating img {
+        width: 30px;
+        height: 28px;
+    }
+
+    .rating {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2%;
+    }
+
+    .offer_price_old {
+        margin-left: 5%;
+    }
+
+    .offer_price {
+        font-size: 200%;
+        color: #12c824;
+    }
+
+    .smart_price > img, .najtansze > img{
+        width: 74px;
+        height: 20px;
+        margin-left: 5%;
+    }
+
+    .pay_later {
+        font-size: 90%;
+    }
+
+    .dodaj {
+        width: 50%;
+        /* border: 1px solid white; */
+        height: auto;
+        display: flex;
+        text-align: center;
+    }
+
+    .dodaj div {
+        padding: 5%;
+        font-size: 150%;
+
+    }
+
+    .dodaj p {
+        width: 20%;
+        font-size: 110%;
+        margin-left: 4%;
+    }
+
+    .minus, .plus {
+        width: 25%;
+        border: 1px solid white;
+    }
+
+    .l_sztuk {
+        width: 50%;
+        border: 1px solid white;
+    }
+
+    .other_offers {
+        width: 100%;
+        /* padding: 2%; */
+        padding-top: 5%;
+        background-color: #222222;
+    }
+
+    .other_offers h4 {
+        text-decoration: none;
+    }
+
+    .other_offers {
+        
+    }
+
+    .najtansze > .offer_price{
+        /* padding: 2%; */
+        color: white;
+    }
+
+    .najtansze {
+        /* padding: 2%; */
+    }
+
+    .najtansze h3 {
+        color: #a39a9a;
+    }
+
+    .stan {
+        color: #a39a9a;
+    }
+
+    .offer_desc > img {
+        width: 100%;
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    
+    .kup_smart {
+        background-color: #ff681d;
+        width: 60%;
+        min-width: 150px;
+        padding: 2%;
+        text-align: center;
+        border: 1px solid #ff681d;
+        border-radius: 6px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .kup_i_zaplac {
+        margin-top: 3%;
+        background-color: #464444;
+        width: 60%;
+        min-width: 150px;
+        padding: 2%;
+        text-align: center;
+        border: 1px solid #464444;
+        border-radius: 6px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+/* 1) kółko ON/OFF – jak wcześniej */
+#tts-click-toggle{
+  position: fixed;
+  bottom: 1.25rem;           /* 20 px od dolnej krawędzi */
+  right: 1.25rem;
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: #ff681d;
+  color:#fff; font-weight:bold; font-size:1.1rem;
+  border:none; cursor:pointer;
+  box-shadow:0 4px 12px rgba(0,0,0,.25);
+  transition:transform .2s, background .3s;
+  z-index:10000;
+}
+#tts-click-toggle[aria-pressed="true"]{ background:#27b53d; }
+#tts-click-toggle:hover{transform:scale(1.07);}
+#tts-click-toggle:active{transform:scale(.95);}
+
+@media screen and (min-width: 1921px){
+    header,main,footer {
+        display: none;
+        background-color: white;
+    }
+
+    .h1-res {
+        text-align: center;
+        color: #fff;
+    }
+}
+
+@media screen and (max-width: 319px){
+    header,main,footer {
+        display: none;
+        background-color: white;
+    }
+
+    .h1-res {
+        text-align: center;
+        color: #fff;
     }
 }
 
