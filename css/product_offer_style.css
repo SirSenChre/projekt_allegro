@@ -90,7 +90,7 @@ img[alt="powiadomienia"] {
     /* margin-right: 2%; */
 }
 
-.navIcons img {
+.navIcons img, .sociale img {
     /* width: 32px;
     height: 32px; */
     filter: brightness(0) invert(1);
